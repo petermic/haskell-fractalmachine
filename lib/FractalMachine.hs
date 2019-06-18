@@ -30,7 +30,8 @@ hutchinsonIterate h s n
         | n < 0 = error "Number of iterations less than zero!"
         | otherwise = hutchinsonIterate h (h s) (n-1)
 
--- Given an output filename, a list of functions, a starting  
+-- Given an output filename, a list of functions, a starting set, and a number of iterations,
+-- plots the image obtained after iterating with the corresponding Hutchinson operator. 
 plotFractal :: String -> [(Float,Float) -> (Float,Float)] -> [(Float,Float)] -> Int -> IO ()
 plotFractal filename list startset iterations = toFile def filename $ do
         layout_title .= ""
